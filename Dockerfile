@@ -89,5 +89,8 @@ RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
 
+sed -i "s/80/$PORT/" /etc/apache2/sites-enabled/*.conf
+sed -i "s/80/$PORT/" /etc/apache2/ports.conf
+
 EXPOSE 80
 EXPOSE 443
